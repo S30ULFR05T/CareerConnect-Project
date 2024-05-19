@@ -3,9 +3,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 npx create-react-app careerconnect
+
 npm install react-router-dom
+
 npm install react-router-hash-linkg
+
 npm install bootstrap@v5.3.3
+
 
 ## Available Scripts
 
