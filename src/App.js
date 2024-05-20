@@ -7,6 +7,10 @@ import Stats from "./components/Stats";
 import Footer from "./components/Footer";
 import About from "./components/About"
 import Resource from "./components/Resource";
+import Slogin from "./components/Slogin";
+import Comlogin from "./components/Comlogin";
+import Collogin from "./components/Collogin";
+
 
 function App() {
   return (
@@ -17,6 +21,9 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/Stats' element={<Stats/>}/>
         <Route path="/Resource" element={<Resource/>}/>
+        <Route path='/Slogin' element={<Slogin/>}/>
+        <Route path='/Comlogin' element={<Comlogin/>}/>
+        <Route path='/Collogin' element={<Collogin/>}/>
       </Routes>
       <Footer/>
     </Router>

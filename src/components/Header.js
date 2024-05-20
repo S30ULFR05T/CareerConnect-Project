@@ -3,7 +3,10 @@ import '../stylesheet/Header.css';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import logo from '../images/favicon.jpg';
-import Resource from './Resource';
+import Slogin from './Slogin';
+import Comlogin from './Comlogin';
+import Collogin from './Collogin';
+
 
 function Header() {
   return (
@@ -16,11 +19,16 @@ function Header() {
           <li><Link to='/about'>About Us</Link></li>
           <li><Link to='/Resource'>Resources</Link></li>
         </ul>
-        <div className="auth-buttons">
-          <a href="#" className="btn btn-signup">Sign Up</a>
-          
-          <a href="#" className="btn btn-signin">Sign In</a>
-        </div>
+        <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" className='loginbutton'>
+    Login
+  </button>
+  <ul class="dropdown-menu">
+    <li><Link to='/Slogin' class="dropdown-item">Student</Link></li>
+    <li><Link to='/Comlogin' class="dropdown-item">Company</Link></li>
+    <li><Link to='/Collogin' class="dropdown-item">College</Link></li>
+  </ul>
+</div>
       </nav>
     </header>
   );
