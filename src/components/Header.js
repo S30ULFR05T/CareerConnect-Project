@@ -6,6 +6,9 @@ import logo from '../images/favicon.jpg';
 import Slogin from './Slogin';
 import Comlogin from './Comlogin';
 import Collogin from './Collogin';
+import Ssignup from './Ssignup';
+import Comsignup from './Comsignup';
+import Colsingup from './Colsignup';
 
 
 function Header() {
@@ -19,16 +22,30 @@ function Header() {
           <li><Link to='/about'>About Us</Link></li>
           <li><Link to='/Resource'>Resources</Link></li>
         </ul>
+
         <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" className='loginbutton'>
-    Login
-  </button>
-  <ul class="dropdown-menu">
-    <li><Link to='/Slogin' class="dropdown-item">Student</Link></li>
-    <li><Link to='/Comlogin' class="dropdown-item">Company</Link></li>
-    <li><Link to='/Collogin' class="dropdown-item">College</Link></li>
-  </ul>
+        <button className="btn btn-secondary dropdown-toggle loginbutton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Sign Up
+      </button>
+      <ul className="dropdown-menu">
+        <li><Link to='/Ssignup' className="dropdown-item">Student</Link></li>
+        <li><Link to='/Comsignup' className="dropdown-item">Company</Link></li>
+        <li><Link to='/Colsignup' className="dropdown-item">College</Link></li>
+      </ul>
 </div>
+
+        <div class="dropdown">
+        <button className="btn btn-secondary dropdown-toggle loginbutton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Login
+      </button>
+      <ul className="dropdown-menu">
+        <li><Link to='/Slogin' className="dropdown-item">Student</Link></li>
+        <li><Link to='/Comlogin' className="dropdown-item">Company</Link></li>
+        <li><Link to='/Collogin' className="dropdown-item">College</Link></li>
+      </ul>
+</div>
+
+
       </nav>
     </header>
   );

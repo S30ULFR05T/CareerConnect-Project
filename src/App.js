@@ -10,6 +10,9 @@ import Resource from "./components/Resource";
 import Slogin from "./components/Slogin";
 import Comlogin from "./components/Comlogin";
 import Collogin from "./components/Collogin";
+import Ssignup from './components/Ssignup';
+import Comsignup from './components/Comsignup';
+import Colsignup from './components/Colsignup';
 
 
 function App() {
@@ -24,6 +27,9 @@ function App() {
         <Route path='/Slogin' element={<Slogin/>}/>
         <Route path='/Comlogin' element={<Comlogin/>}/>
         <Route path='/Collogin' element={<Collogin/>}/>
+        <Route path="/Ssignup" element={<Ssignup/>}/>
+        <Route path='/Comsignup' element={<Comsignup/>}/>
+        <Route path='/Colsignup' element={<Colsignup/>}/>
       </Routes>
       <Footer/>
     </Router>

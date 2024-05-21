@@ -60,4 +60,52 @@
     color: #007bff;
     border: 1px solid #007bff;
   }
-  
+
+  /* Button Styles */
+.loginbutton {
+  background-color: #007bff; /* Primary blue color */
+  border: none;
+  color: white;
+  padding: 8px 16px; /* Reduced padding */
+  font-size: 14px; /* Smaller font size */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.loginbutton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.loginbutton:focus, .loginbutton:active {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Light blue shadow on focus */
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+  margin-top: 5px; /* Reduced space between button and dropdown */
+  padding: 5px 0; /* Reduced vertical padding */
+}
+
+.dropdown-item {
+  color: #333; /* Dark text color */
+  padding: 8px 16px; /* Reduced padding */
+  font-size: 14px; /* Smaller font size */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: #f0f2f5; /* Light grey background on hover */
+  color: #007bff; /* Primary blue color on hover */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+.dropdown-item:active {
+  background-color: #e2e6ea; /* Slightly darker grey on active */
+}
