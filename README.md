@@ -6,7 +6,7 @@ npx create-react-app careerconnect
 
 npm install react-router-dom
 
-npm install react-router-hash-linkg
+npm install react-router-hash-link
 
 npm install bootstrap@v5.3.3
 
