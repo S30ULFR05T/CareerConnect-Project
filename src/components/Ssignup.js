@@ -144,7 +144,9 @@
 // export default Colsignup;
 
 import React, { useState } from 'react';
-import '../stylesheet/Ssignup.css';
+import '../stylesheet/StudentGlobal.css';
+import './SEducation'
+import { Link } from 'react-router-dom';
 
 function Ssignup() {
   const [password, setPassword] = useState('');
@@ -216,8 +218,9 @@ function Ssignup() {
             <input type="checkbox" className="form-check-input" id="check1" />
             <label className="form-check-label" htmlFor="check1">Click on this box to accept T&C and Privacy Policy</label>
           </div>
-          
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <Link to='/SEducation'>
+          <button type="submit" className="btn btn-primary">Next</button>
+          </Link>
         </form>
       </div>
     </div>

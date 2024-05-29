@@ -13,6 +13,12 @@ import Collogin from "./components/Collogin";
 import Ssignup from './components/Ssignup';
 import Comsignup from './components/Comsignup';
 import Colsignup from './components/Colsignup';
+import SEducation from './components/SEducation';
+import SSkills from './components/SSkills';
+import SCertifications from './components/SCertifications';
+import SCodingProfile from './components/SCodingProfile';
+import SWorkExp from './components/SWorkExp';
+import StudentDashboard from './components/StudentDashboard'
 
 
 function App() {
@@ -30,6 +36,12 @@ function App() {
         <Route path="/Ssignup" element={<Ssignup/>}/>
         <Route path='/Comsignup' element={<Comsignup/>}/>
         <Route path='/Colsignup' element={<Colsignup/>}/>
+        <Route path='SEducation' element={<SEducation/>}/>
+        <Route path="/SSkills" element={<SSkills/>}/>
+        <Route path="/SCertifications" element={<SCertifications/>}/>
+        <Route path="/SCodingProfile" element={<SCodingProfile/>}/>
+        <Route path="/SWorkExp" element={<SWorkExp/>}/>
+        <Route path="/StudentDashboard" element={<StudentDashboard/>}/>
       </Routes>
       <Footer/>
     </Router>
