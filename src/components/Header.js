@@ -110,14 +110,14 @@ function Header() {
     <header className="header">
       <nav className="navbar">
         <div className="logo"><img src={logo} alt="CareerConnect Logo" /><Link to='/'>CareerConnect</Link></div>
-        <ul className="nav-links">
+        <ul className="nav-links mb-0">
           <li><Link to='/'>Home</Link></li>
           <li><HashLink to="/#features">Features</HashLink></li>
           <li><Link to='/about'>About Us</Link></li>
           <li><Link to='/Resource'>Resources</Link></li>
         </ul>
 
-        <div className="dropdown">
+        <div className="dropdown mb-0">
           <button className="btn btn-secondary dropdown-toggle loginbutton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Sign Up
           </button>
@@ -128,7 +128,7 @@ function Header() {
           </ul>
         </div>
 
-        <div className="dropdown">
+        <div className="dropdown mb-0">
           <button className="btn btn-secondary dropdown-toggle loginbutton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Login
           </button>
