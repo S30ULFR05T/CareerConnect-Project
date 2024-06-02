@@ -19,6 +19,9 @@ import SCertifications from './components/SCertifications';
 import SCodingProfile from './components/SCodingProfile';
 import SWorkExp from './components/SWorkExp';
 import StudentDashboard from './components/StudentDashboard'
+import Dashboard from "./components/Dashboard/Dashboard";
+import DHome from "./components/Dashboard/DHome";
+import JobProfiles from "./components/Dashboard/JobProfiles";
 
 
 function App() {
@@ -42,6 +45,9 @@ function App() {
         <Route path="/SCodingProfile" element={<SCodingProfile/>}/>
         <Route path="/SWorkExp" element={<SWorkExp/>}/>
         <Route path="/StudentDashboard" element={<StudentDashboard/>}/>
+        <Route path="/Dashboard" element={<Dashboard/>}/>
+        <Route path="/DHome" element={<DHome/>}/>
+        <Route path="/JobProfiles" element={<JobProfiles/>}/>
       </Routes>
       <Footer/>
     </Router>
