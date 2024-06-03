@@ -2,13 +2,21 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## For Creating new Folder for project
+
 npx create-react-app careerconnect
+
+## For Front End (Cient)
 
 npm install react-router-dom
 
 npm install react-router-hash-link
 
 npm install bootstrap@v5.3.3
+
+## Server
+
+npm install express mongodb cors
 
 
 ## Available Scripts
