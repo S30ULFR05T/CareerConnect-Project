@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import '../stylesheet/StudentGlobal.css';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import './SCodingProfile';
+import axios from 'axios';
 
 function Certifications() {
     const [hasCertifications, setHasCertifications] = useState('');
     const [certificates, setCertificates] = useState([{ name: '', file: null }]);
+    const { studentId } = useParams();
+    const navigate = useNavigate();
 
     const handleCertificationChange = (e) => {
         setHasCertifications(e.target.value);
@@ -33,7 +36,16 @@ function Certifications() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission here
+        const body = {
+            certificates: certificates
+        }
+        axios.post(`http://localhost:5000/student/${studentId}/field/add`, body).then(() => {
+            navigate(`/SCodingProfile/${studentId}`)
+        }).catch((err) => {
+            console.log(err)
+        })
     };
+
 
     return (
         <div className="login-container">
@@ -84,9 +96,9 @@ function Certifications() {
                             Add Another Certificate
                         </button>
                     )}
-                    <Link to='/SCodingProfile'>
+                    {/* <Link to='/SCodingProfile'> */}
                     <button type="submit" className="btn btn-primary">Next</button>
-                    </Link>
+                    {/* </Link> */}
                 </form>
             </div>
         </div>

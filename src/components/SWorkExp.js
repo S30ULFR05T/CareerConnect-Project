@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import '../stylesheet/StudentGlobal.css';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function ExperienceForm() {
     const [includeExperience, setIncludeExperience] = useState(false);
     const [experiences, setExperiences] = useState([
         { companyName: '', designation: '', startYear: '', endYear: '', currentlyWorking: false, currentCTC: '', description: '' }
     ]);
+    const { studentId } = useParams();
+    const navigate = useNavigate();
 
     const handleAddExperience = () => {
         setExperiences([...experiences, { companyName: '', designation: '', startYear: '', endYear: '', currentlyWorking: false, currentCTC: '', description: '' }]);
@@ -20,6 +24,15 @@ function ExperienceForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission here
+
+        const body = {
+            workExperiences: experiences
+         }
+         axios.post(`http://localhost:5000/student/${studentId}/field/add`, body).then(() => {
+             navigate(`/Slogin/`)
+         }).catch((err) => {
+             console.log(err)
+         })
     };
 
     return (

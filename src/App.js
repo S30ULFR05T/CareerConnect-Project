@@ -36,11 +36,11 @@ function App() {
         <Route path="/Ssignup" element={<Ssignup/>}/>
         <Route path='/Comsignup' element={<Comsignup/>}/>
         <Route path='/Colsignup' element={<Colsignup/>}/>
-        <Route path='SEducation' element={<SEducation/>}/>
-        <Route path="/SSkills" element={<SSkills/>}/>
-        <Route path="/SCertifications" element={<SCertifications/>}/>
-        <Route path="/SCodingProfile" element={<SCodingProfile/>}/>
-        <Route path="/SWorkExp" element={<SWorkExp/>}/>
+        <Route path='SEducation/:studentId' element={<SEducation/>}/>
+        <Route path="/SSkills/:studentId" element={<SSkills/>}/>
+        <Route path="/SCertifications/:studentId" element={<SCertifications/>}/>
+        <Route path="/SCodingProfile/:studentId" element={<SCodingProfile/>}/>
+        <Route path="/SWorkExp/:studentId" element={<SWorkExp/>}/>
         <Route path="/StudentDashboard" element={<StudentDashboard/>}/>
       </Routes>
       <Footer/>
