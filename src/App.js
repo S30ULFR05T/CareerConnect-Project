@@ -101,6 +101,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
+<<<<<<< HEAD
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
@@ -122,6 +123,24 @@ const App = () => {
           <Route path="JobProfiles" element={<JobProfiles />} />
         </Route>
         <Route path="DHome" element={<DHome />} />
+=======
+        <Route path="/" element={<Home />} />
+        <Route path='/about' element={<About/>}/>
+        <Route path='/Stats' element={<Stats/>}/>
+        <Route path="/Resource" element={<Resource/>}/>
+        <Route path='/Slogin' element={<Slogin/>}/>
+        <Route path='/Comlogin' element={<Comlogin/>}/>
+        <Route path='/Collogin' element={<Collogin/>}/>
+        <Route path="/Ssignup" element={<Ssignup/>}/>
+        <Route path='/Comsignup' element={<Comsignup/>}/>
+        <Route path='/Colsignup' element={<Colsignup/>}/>
+        <Route path='SEducation/:studentId' element={<SEducation/>}/>
+        <Route path="/SSkills/:studentId" element={<SSkills/>}/>
+        <Route path="/SCertifications/:studentId" element={<SCertifications/>}/>
+        <Route path="/SCodingProfile/:studentId" element={<SCodingProfile/>}/>
+        <Route path="/SWorkExp/:studentId" element={<SWorkExp/>}/>
+        <Route path="/StudentDashboard" element={<StudentDashboard/>}/>
+>>>>>>> 75c6844b5a4802e6e281353fd00c2d8a8ab78991
       </Routes>
     </Router>
   );

@@ -194,7 +194,8 @@
 import React, { useState } from 'react';
 import '../stylesheet/StudentGlobal.css';
 import './SSkills'
-import { Link } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function EducationForm() {
     const [educationLevel, setEducationLevel] = useState('');
@@ -207,10 +208,31 @@ function EducationForm() {
     const [totalMarksCGPA, setTotalMarksCGPA] = useState('');
     const [obtainedMarksCGPA, setObtainedMarksCGPA] = useState('');
     const [percentageCGPA, setPercentageCGPA] = useState('');
+    const { studentId } = useParams();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission here
+        const body = {
+            education: {
+                educationLevel: educationLevel,
+                universityName: universityName,
+                collegeName: collegeName,
+                graduatingCourse: graduatingCourse,
+                duration: duration,
+                startYear: startYear,
+                completionYear: completionYear,
+                totalMarksCGPA: totalMarksCGPA,
+                obtainedMarksCGPA: obtainedMarksCGPA,
+                percentageCGPA: percentageCGPA
+            }
+        }
+        axios.post(`http://localhost:5000/student/${studentId}/field/add`, body).then(() => {
+            navigate(`/SSkills/${studentId}`)
+        }).catch((err) => {
+            console.log(err)
+        })
     };
 
     return (
@@ -330,9 +352,9 @@ function EducationForm() {
                             </div>
                         </>
                     )}
-                    <Link to='/SSkills'>
+                    {/* <Link to='/SSkills'> */}
                     <button type="submit" className="btn btn-primary">Next</button>
-                    </Link>
+                    {/* </Link> */}
                 </form>
             </div>
         </div>
