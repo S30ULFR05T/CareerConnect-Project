@@ -46,7 +46,7 @@ client.connect().then(() => {
     console.log("Error connecting to MongoDB", e);
 })
 
-
+// Student Login email and password
 async function getStudent(email, password) {
   try {   
     await client.connect();
@@ -59,6 +59,8 @@ async function getStudent(email, password) {
       email: email,
       password: password
       });
+
+      
 
     if (student) {
       console.log('student found:', student);
@@ -74,6 +76,71 @@ async function getStudent(email, password) {
     await client.close();
   }
 }
+// Student login email and password closing
+
+// company login email and password opening
+async function getCompany(email, password) {
+  try {   
+    await client.connect();
+    // Get the database and collection on which to run the operation
+    const database = client.db("carrer-connect");
+    const companys = database.collection("company");
+    
+    const idToFind = '60d5f47b8d1b2c1a4c8e4d72';
+    const company = await companys.findOne({
+      email: email,
+      password: password
+      });
+
+      
+
+    if (company) {
+      console.log('company found:', company);
+    } else {
+      throw new Error("company not found")
+      // console.log('No student matches the provided ID.');
+    }
+    
+  } catch(Error) {
+    throw Error
+  }
+   finally {
+    await client.close();
+  }
+}
+// company login email and password closing
+
+// college login email and password opening
+async function getCollege(email, password) {
+  try {   
+    await client.connect();
+    // Get the database and collection on which to run the operation
+    const database = client.db("carrer-connect");
+    const colleges = database.collection("college");
+    
+    const idToFind = '60d5f47b8d1b2c1a4c8e4d72';
+    const college = await colleges.findOne({
+      email: email,
+      password: password
+      });
+
+      
+
+    if (college) {
+      console.log('college found:', college);
+    } else {
+      throw new Error("college not found")
+      // console.log('No student matches the provided ID.');
+    }
+    
+  } catch(Error) {
+    throw Error
+  }
+   finally {
+    await client.close();
+  }
+}
+// college login email and password closing
 
 async function insertStudent(student) {
   try {
@@ -82,6 +149,34 @@ async function insertStudent(student) {
     const students = database.collection("student");
     console.log(student);
     const result = await students.insertOne(student);
+    return result.insertedId;
+
+  } finally {
+    await client.close();
+  }
+}
+
+async function insertCompany(company) {
+  try {
+    await client.connect();
+    const database = client.db("carrer-connect");
+    const companys = database.collection("company");
+    console.log(company);
+    const result = await companys.insertOne(company);
+    return result.insertedId;
+
+  } finally {
+    await client.close();
+  }
+}
+
+async function insertCollege(college) {
+  try {
+    await client.connect();
+    const database = client.db("carrer-connect");
+    const colleges = database.collection("college");
+    console.log(college);
+    const result = await colleges.insertOne(college);
     return result.insertedId;
 
   } finally {
@@ -128,6 +223,22 @@ app.post("/student", (req, res) => {
   })
 })
 
+app.post("/company", (req, res) => {
+  insertCompany(req.body).then((sid) => {
+    res.send(sid);
+  }).catch(err => {
+    res.status(500).send(err);
+  })
+})
+
+app.post("/college", (req, res) => {
+  insertCollege(req.body).then((sid) => {
+    res.send(sid);
+  }).catch(err => {
+    res.status(500).send(err);
+  })
+})
+
 app.post("/student/:id/field/add", (req, res) => {
   const id = req.params.id
   addfield(id, req.body).then(() => {
@@ -140,6 +251,40 @@ app.post("/student/:id/field/add", (req, res) => {
 app.post("/login", (req, res) => {
   getStudent(req.body.email, req.body.password).then(() => {
     res.send('student found ');
+  }).catch(err => {
+    res.status(500).send(err);
+  })
+})
+
+app.post("/company/:id/field/add", (req, res) => {
+  const id = req.params.id
+  addfield(id, req.body).then(() => {
+    res.send('add successfully '+id);
+  }).catch(err => {
+    res.status(500).send(err);
+  })
+})
+
+app.post("/companylogin", (req, res) => {
+  getCompany(req.body.email, req.body.password).then(() => {
+    res.send('company found ');
+  }).catch(err => {
+    res.status(500).send(err);
+  })
+})
+
+app.post("/collegelogin", (req, res) => {
+  getCollege(req.body.email, req.body.password).then(() => {
+    res.send('college found ');
+  }).catch(err => {
+    res.status(500).send(err);
+  })
+})
+
+app.post("/college/:id/field/add", (req, res) => {
+  const id = req.params.id
+  addfield(id, req.body).then(() => {
+    res.send('add successfully '+id);
   }).catch(err => {
     res.status(500).send(err);
   })

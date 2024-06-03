@@ -84,7 +84,7 @@ function Slogin() {
     axios.post('http://localhost:5000/login', { email, password })
       .then((response) => {
         console.log(response.data);
-        navigate('/dashboard'); // Replace '/dashboard' with the actual path you want to navigate to
+        navigate('/dashboard'); 
       })
       .catch((error) => {
         console.error(error);
