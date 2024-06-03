@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 
 // Replace the uri string with your connection string.
-const url = 'mongodb://0.0.0.0:27017/mydb';
+const url = 'mongodb://0.0.0.0:27017/';
 const client = new MongoClient(url);
 
 
