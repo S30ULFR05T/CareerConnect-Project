@@ -47,7 +47,7 @@ client.connect().then(() => {
 })
 
 
-async function getStudentById(id) {
+async function getStudent(email, password) {
   try {   
     await client.connect();
     // Get the database and collection on which to run the operation
@@ -55,15 +55,22 @@ async function getStudentById(id) {
     const students = database.collection("student");
     
     const idToFind = '60d5f47b8d1b2c1a4c8e4d72';
-    const student = await students.findOne({_id: new ObjectId(idToFind)});
+    const student = await students.findOne({
+      email: email,
+      password: password
+      });
 
     if (student) {
       console.log('student found:', student);
     } else {
-      console.log('No student matches the provided ID.');
+      throw new Error("student not found")
+      // console.log('No student matches the provided ID.');
     }
-
-  } finally {
+    
+  } catch(Error) {
+    throw Error
+  }
+   finally {
     await client.close();
   }
 }
@@ -130,6 +137,13 @@ app.post("/student/:id/field/add", (req, res) => {
   })
 })
 
+app.post("/login", (req, res) => {
+  getStudent(req.body.email, req.body.password).then(() => {
+    res.send('student found ');
+  }).catch(err => {
+    res.status(500).send(err);
+  })
+})
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
