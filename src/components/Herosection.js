@@ -61,6 +61,8 @@ import '../stylesheet/HeroSection.css';
 import FirstImage from '../images/student1.jpg';
 import SecondImage from '../images/student2.jpg';
 import ThirdImage from '../images/student3.jpg';
+import { Link } from 'react-router-dom';
+
 
 const HeroSection = () => {
   return (
@@ -69,9 +71,9 @@ const HeroSection = () => {
         <h1>CareerConnect: Revolutionizing the Campus Hiring Process.</h1>
         <p>CareerConnect is a Platform for Colleges, Universities & Students, Focused on Revolutionizing the Campus Hiring Process.</p>
         <div className="cta-buttons">
-          <a href="#features" className="cta-button">I am a Student</a>
-          <a href="#features" className="cta-button">We are CRD</a>
-          <a href="#features" className="cta-button">We are Hiring</a>
+          <Link to='/Ssignup'><a className="cta-button">I am a Student</a></Link>
+          <Link to='/Colsignup'><a className="cta-button">We are CRD</a></Link>
+          <Link to='/Comsignup'><a className="cta-button">We are Hiring</a></Link>
         </div>
       </div>
       <div className="hero-images">
